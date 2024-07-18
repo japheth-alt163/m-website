@@ -23,7 +23,7 @@ app.use("/api/user", UserRoute);
 
 const startServer = async () => {
   try {
-    await connectDb(process.env.MONGO_DB_URI);
+    await connectDb(process.env.MONGO_URI);  // Change made here
 
     app.listen(PORT, () => {
       console.log(`Server running on Port ${PORT}...`);
@@ -32,4 +32,5 @@ const startServer = async () => {
     console.log(error);
   }
 };
+
 startServer();
